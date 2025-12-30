@@ -1,0 +1,2 @@
+Swiggy-Clone-React-Frontend-Application
+Built a Swiggy-inspired food delivery frontend using React.js. Implemented reusable components, hooks, and dynamic UI rendering for restaurant and menu listing. Used Parcel for bundling, ensured responsive design with HTML and CSS, and managed code using Git and GitHub.
