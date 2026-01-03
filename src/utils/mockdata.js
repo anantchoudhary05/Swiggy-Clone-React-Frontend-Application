@@ -1,42 +1,4 @@
-import { FiSearch } from "react-icons/fi";
-import { BiSolidOffer } from "react-icons/bi";
-import { MdHelpOutline } from "react-icons/md";
-import { FaUserCircle } from "react-icons/fa";
-import { BsCart3 } from "react-icons/bs";
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src="https://media-assets.swiggy.com/fl_lossy,f_auto,q_auto,w_96,h_96/portal/m/logo_192x192.png"/>
-      </div>
-      <div className="nav-container">
-        <ul className="nav-items">
-          <li><FiSearch className="icon"/> Search</li>
-          <li><BiSolidOffer className="icon"/> Offers</li>
-          <li><MdHelpOutline className="icon"/> Help</li>
-          <li><FaUserCircle className="icon"/> Sign In</li>
-          <li><BsCart3 className="icon"/> Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestroCard = (props) => {
- const {resData:{info:{name,cloudinaryImageId,cuisines,avgRating,sla:{deliveryTime},aggregatedDiscountInfoV3:{header,subHeader}}}} = props;
-  return (
-    <div className="restro-card"> 
-      <img className="restro-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}/>
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>⭐{avgRating}</h4>
-      <h4>{deliveryTime} mins</h4>
-      <h2>{header} {subHeader}</h2>
-    </div>
-  )
-};
-
-const resObj = [{
+const resturantList = [{
                     "info": {
                       "id": "725082",
                       "name": "Pizza Hut",
@@ -47,7 +9,7 @@ const resObj = [{
                       "cuisines": [
                         "Pizzas"
                       ],
-                      "avgRating": 4.3,
+                      "avgRating": 3.8,
                       "parentId": "721",
                       "avgRatingString": "4.3",
                       "totalRatingsString": "4.0K+",
@@ -155,7 +117,7 @@ const resObj = [{
                         "Chinese",
                         "Biryani"
                       ],
-                      "avgRating": 4.4,
+                      "avgRating": 3.4,
                       "parentId": "618983",
                       "avgRatingString": "4.4",
                       "totalRatingsString": "20K+",
@@ -261,7 +223,7 @@ const resObj = [{
                         "Snacks",
                         "Biryani"
                       ],
-                      "avgRating": 4.2,
+                      "avgRating": 3.9,
                       "veg": true,
                       "parentId": "12056",
                       "avgRatingString": "4.2",
@@ -1403,42 +1365,4 @@ const resObj = [{
                     }
                   }
                 ];
-
-
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">
-        <input type="text" className="search-box" placeholder="Search for restaurants and food" />
-        <button className="search-btn">Search</button>
-      </div>
-      <div className="restro-container">
-        <RestroCard resData={resObj[0]}/>
-        <RestroCard resData={resObj[1]}/>
-        <RestroCard resData={resObj[2]}/>
-        <RestroCard resData={resObj[3]}/>
-        <RestroCard resData={resObj[4]}/>
-        <RestroCard resData={resObj[5]}/>
-        <RestroCard resData={resObj[6]}/>
-        <RestroCard resData={resObj[7]}/>
-        <RestroCard resData={resObj[8]}/>
-        <RestroCard resData={resObj[9]}/>
-
-
-      </div>
-    </div>
-  )
-}
-
-const App = () => {
-  return (
-    <div className="App">
-        <Header />
-        <Body />
-    </div>
-
-  )
-};
-
-export default App;
+export default resturantList;

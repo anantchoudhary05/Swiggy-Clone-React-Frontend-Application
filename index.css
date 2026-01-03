@@ -183,4 +183,17 @@
     color: white;
     cursor: pointer;
     
-}           
+}        
+
+.filter-btn{
+    height: 42px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #ff5200;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+}
