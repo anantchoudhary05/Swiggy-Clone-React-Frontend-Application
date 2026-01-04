@@ -1,19 +1,29 @@
 import RestroCard from "./RestroCard";
 import resturantList from "../utils/mockdata";
+import { useState } from "react";  
 
-let copyOfResturantList = [...resturantList];
+
 
 
 
 const Body = () => {
+  const [filteredList, setfilteredList] = useState(resturantList);
   return (
     <div className="body">
         <div className="filter">
             <button 
             className="filter-btn" 
-            onClick={()=> 
-                {copyOfResturantList = resturantList.filter(resturant => (resturant.info.avgRating >= 4));
-                console.log(copyOfResturantList);
+            onClick={()=>
+                {
+                  setfilteredList(resturantList);
+                }}
+            >
+                All </button>
+            <button 
+            className="filter-btn" 
+            onClick={()=>
+                {
+                  setfilteredList(filteredList.filter(resturant => (resturant.info.avgRating >= 4)));
                 }}
             >
                 Top Rated </button>
@@ -23,7 +33,7 @@ const Body = () => {
         <button className="search-btn">Search</button>
       </div>
       <div className="restro-container">
-        {copyOfResturantList.map(resturant => 
+        {filteredList.map(resturant => 
         <RestroCard key={resturant.info.id}resData={resturant} />
         )}
         
