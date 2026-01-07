@@ -22,9 +22,8 @@ const Header = () => {
           <li><FaUserCircle className="icon"/> <button className="login-btn"
           onClick={()=>{
             setBtnName(btnName==="Login"?"Logout":"Login");
-            console.log("Button clicked", btnName);
           }}
-          > {btnName}</button></li>;
+          > {btnName}</button></li>
         </ul>
       </div>
     </div>
